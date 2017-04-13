@@ -9,16 +9,21 @@ import { Component } from "@angular/core";
         autocorrect="false" autocapitalizationType="none"></TextField>
       <TextField hint="Password" secure="true"></TextField>
 
-      <Button text="Sign in" class="submit-button" (tap)="submit()"></Button>
-      <Button text="Sign up for Groceries"></Button>
+      <Button [text]="isLoggedIn ? 'Sign in' : 'Sign up'" class="submit-button" (tap)="submit()"></Button>
+      <Button [text]="isLoggedIn ? 'Sign up' : 'Back to login'" (tap)="toggleDisplay()"></Button>
     </StackLayout>
   `,
   styleUrls: ["pages/login/login-common.css", "pages/login/login.css"]
 })
 export class AppComponent {
   email = "nativescriptrocks@telerik.com";
+  isLoggedIn = true;
 
   submit() {
-    alert("You are using: " + this.email);
+    alert("You're using: " + this.email);
+  }
+
+  toggleDisplay() {
+    this.isLoggedIn = !this.isLoggedIn;
   }
 }
