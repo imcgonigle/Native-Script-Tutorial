@@ -17,11 +17,15 @@ import { User } from "./shared/user/user";
   styleUrls: ["pages/login/login-common.css", "pages/login/login.css"]
 })
 export class AppComponent {
-  email = "nativescriptrocks@telerik.com";
+  user: User;
   isLoggedIn = true;
 
+  constructor() {
+    this.user = new User();
+  }
+
   submit() {
-    alert("You're using: " + this.email);
+    alert("You're using: " + this.user.email);
   }
 
   toggleDisplay() {
