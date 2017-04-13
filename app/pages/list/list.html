@@ -6,10 +6,10 @@
         <Image src="res://add" (tap)="add()" col="1"></Image>
     </GridLayout>
 
-    <ListView [items]="groceryList" row="1" class="small-spacing" [class.visible]="isLoaded">
+    <ListView [items]="groceryList" row="1" class="small-spacing" [class.visible]="listLoaded">
         <template let-item="item">
-      <Label [text]="item.name" class="medium-spacing"></Label>
-    </template>
+            <Label [text]="item.name" class="medium-spacing"></Label>
+        </template>
     </ListView>
 
 </GridLayout>

@@ -13,22 +13,22 @@ export class ListComponent implements OnInit {
   groceryList: Array<Grocery> = [];
   grocery = "";
   isLoading = false;
-  listLoaded = false;
+  listLoaded = true;
   @ViewChild("groceryTextField") groceryTextField: ElementRef;
 
   constructor(private groceryListService: GroceryListService){}
 
   ngOnInit() {
-  this.isLoading = true;
-  this.groceryListService.load()
-    .subscribe(loadedGroceries => {
-      loadedGroceries.forEach((groceryObject) => {
-        this.groceryList.unshift(groceryObject);
+    this.isLoading = true;
+    this.groceryListService.load()
+      .subscribe(loadedGroceries => {
+        loadedGroceries.forEach((groceryObject) => {
+          this.groceryList.unshift(groceryObject);
+        });
+        this.isLoading = false;
+        this.listLoaded = true;
       });
-      this.isLoading = false;
-      this.listLoaded = true;
-    });
-}
+  }
 
   add() {
     if (this.grocery.trim() === "") {
