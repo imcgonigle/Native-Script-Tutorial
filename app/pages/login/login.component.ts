@@ -1,7 +1,9 @@
 
-import { Component, OnInit } from "@angular/core";
+import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { Router } from "@angular/router";
 import { Page } from "ui/page";
+import { Color } from "color";
+import { View } from "ui/core/view";
 
 import { User } from "../../shared/user/user";
 import { UserService } from "../../shared/user/user.service";
