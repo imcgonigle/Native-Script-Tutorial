@@ -17,6 +17,7 @@ import { UserService } from "../../shared/user/user.service";
 export class LoginComponent implements OnInit {
   user: User;
   isLoggingIn = true;
+  @ViewChild("container") container: ElementRef;
 
   constructor(private router: Router, private userService: UserService, private page: Page) {
     this.user = new User();
@@ -58,5 +59,10 @@ export class LoginComponent implements OnInit {
   
   toggleDisplay() {
     this.isLoggingIn = !this.isLoggingIn;
+    let container = <View>this.container.nativeElement;
+    container.animate({
+      backgroundColor: this.isLoggingIn ? new Color("white") : new Color("#301217"),
+      duration: 200
+    });
   }
 }
