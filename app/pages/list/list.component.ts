@@ -13,6 +13,7 @@ export class ListComponent implements OnInit {
   groceryList: Array<Grocery> = [];
   grocery = "";
   isLoading = false;
+  listLoaded = false;
   @ViewChild("groceryTextField") groceryTextField: ElementRef;
 
   constructor(private groceryListService: GroceryListService){}
@@ -25,6 +26,7 @@ export class ListComponent implements OnInit {
         this.groceryList.unshift(groceryObject);
       });
       this.isLoading = false;
+      this.listLoaded = true;
     });
 }
 
