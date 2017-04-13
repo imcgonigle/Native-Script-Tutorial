@@ -10,7 +10,7 @@ import { UserService } from "../../shared/user/user.service";
   templateUrl: "pages/login/login.html",
   styleUrls: ["pages/login/login-common.css", "pages/login/login.css"]
 })
-export class AppComponent {
+export class LoginComponent {
   user: User;
   isLoggingIn = true;
 
