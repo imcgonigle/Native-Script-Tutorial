@@ -6,9 +6,9 @@ import { User } from "./shared/user/user";
   template: `
     <StackLayout>
       <Image src="res://logo_login" stretch="none" horizontalAlignment="center"></Image>
-      <TextField hint="Email Address" keyboardType="email" [(ngModel)]="email"
+      <TextField hint="Email Address" keyboardType="email" [(ngModel)]="user.email"
         autocorrect="false" autocapitalizationType="none"></TextField>
-      <TextField hint="Password" secure="true"></TextField>
+      <TextField hint="Password" secure="true" [(ngModel)]="user.password"></TextField>
 
       <Button [text]="isLoggedIn ? 'Sign in' : 'Sign up'" class="submit-button" (tap)="submit()"></Button>
       <Button [text]="isLoggedIn ? 'Sign up' : 'Back to login'" (tap)="toggleDisplay()"></Button>
