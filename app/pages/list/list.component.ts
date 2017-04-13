@@ -4,15 +4,21 @@ import { GroceryListService } from '../../shared/grocery/grocery-list.service';
 
 @Component({
   selector: "list",
+  providers: [GroceryListService],
   templateUrl: "pages/list/list.html",
   styleUrls: ["pages/list/list-common.css", "pages/list/list.css"]
 })
 export class ListComponent implements OnInit {
-  groceryList: Array<Object> = [];
+  groceryList: Array<Grocery> = [];
+
+  constructor(private groceryListService: GroceryListService){}
 
   ngOnInit() {
-    this.groceryList.push({ name: "Apples" });
-    this.groceryList.push({ name: "Bananas" });
-    this.groceryList.push({ name: "Oranges" });
-  }
+  this.groceryListService.load()
+    .subscribe(loadedGroceries => {
+      loadedGroceries.forEach((groceryObject) => {
+        this.groceryList.unshift(groceryObject);
+      });
+    });
+}
 }
