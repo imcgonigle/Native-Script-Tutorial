@@ -10,6 +10,8 @@ import { GroceryListService } from '../../shared/grocery/grocery-list.service';
 })
 export class ListComponent implements OnInit {
   groceryList: Array<Grocery> = [];
+  grocery = "";
+  @ViewChild("groceryTextField") groceryTextField: ElementRef;
 
   constructor(private groceryListService: GroceryListService){}
 
