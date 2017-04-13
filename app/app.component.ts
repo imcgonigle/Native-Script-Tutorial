@@ -5,7 +5,7 @@ import { Component } from "@angular/core";
   template: `
     <StackLayout>
       <Image src="res://logo_login" stretch="none" horizontalAlignment="center"></Image>
-      <TextField hint="Email Address" keyboardType="email"
+      <TextField hint="Email Address" keyboardType="email" [(ngModel)]="email"
         autocorrect="false" autocapitalizationType="none"></TextField>
       <TextField hint="Password" secure="true"></TextField>
 
@@ -16,7 +16,9 @@ import { Component } from "@angular/core";
   styleUrls: ["pages/login/login-common.css", "pages/login/login.css"]
 })
 export class AppComponent {
+  email = "nativescriptrocks@telerik.com";
+
   submit() {
-    console.log("hello")
+    alert("You are using: " + this.email);
   }
 }
