@@ -1,4 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
+import { Grocery } from '../../shared/grocery/grocery';
+import { GroceryListService } from '../../shared/grocery/grocery-list.service';
 
 @Component({
   selector: "list",
