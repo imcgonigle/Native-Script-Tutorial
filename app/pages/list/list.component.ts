@@ -12,6 +12,7 @@ import { TextField } from "ui/text-field";
 export class ListComponent implements OnInit {
   groceryList: Array<Grocery> = [];
   grocery = "";
+  isLoading = false;
   @ViewChild("groceryTextField") groceryTextField: ElementRef;
 
   constructor(private groceryListService: GroceryListService){}
