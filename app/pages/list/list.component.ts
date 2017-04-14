@@ -3,6 +3,8 @@ import { Grocery } from '../../shared/grocery/grocery';
 import { GroceryListService } from '../../shared/grocery/grocery-list.service';
 import { TextField } from "ui/text-field";
 
+import * as SocialShare from "nativescript-social-share";
+
 @Component({
   selector: "list",
   providers: [GroceryListService],
