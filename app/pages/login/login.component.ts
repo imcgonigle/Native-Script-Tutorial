@@ -18,6 +18,8 @@ export class LoginComponent implements OnInit {
   user: User;
   isLoggingIn = true;
   @ViewChild("container") container: ElementRef;
+  @ViewChild("email") email: ElementRef;
+  @ViewChild("password") password: ElementRef;
 
   constructor(private router: Router, private userService: UserService, private page: Page) {
     this.user = new User();
