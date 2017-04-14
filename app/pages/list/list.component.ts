@@ -57,6 +57,22 @@ export class ListComponent implements OnInit {
         }
       )
   }
+  delete(item: Grocery) {
+    this.groceryListService.delete(item.id)
+      .subscribe(
+        groceryItem => {
+          this.groceryList = this.groceryList.filter( grocery => {
+            return grocery.id !== item.id
+          })
+        },
+        () => {
+          alert({
+            message: "Something went wrong while deleting that item",
+            okButtonText: "OK"
+          })
+        }
+      )
+  }
   share() {
     let list = [];
     for (let i = 0, size = this.groceryList.length; i < size ; i++) {
