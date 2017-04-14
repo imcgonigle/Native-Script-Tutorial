@@ -35,6 +35,19 @@ export class LoginComponent implements OnInit {
     this.page.backgroundImage = "res://bg_login";
   }
 
+  setTextFieldColors() {
+    let emailTextField = <TextField>this.email.nativeElement;
+    let passwordTextField = <TextField>this.password.nativeElement;
+
+    let mainTextColor = new Color(this.isLoggingIn ? "black" : "#C4AFB4");
+    emailTextField.color = mainTextColor;
+    passwordTextField.color = mainTextColor;
+
+    let hintColor = new Color(this.isLoggingIn ? "#ACA6A7" : "#C4AFB4");
+    setHintColor({ view: emailTextField, color: hintColor });
+    setHintColor({ view: passwordTextField, color: hintColor });
+  }
+
   submit() {
     if(!this.user.isValid()) {
       alert("Please enter a valid email address.");
