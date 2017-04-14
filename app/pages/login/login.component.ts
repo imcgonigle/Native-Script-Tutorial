@@ -81,6 +81,7 @@ export class LoginComponent implements OnInit {
   
   toggleDisplay() {
     this.isLoggingIn = !this.isLoggingIn;
+    this.setTextFieldColors();
     let container = <View>this.container.nativeElement;
     container.animate({
       backgroundColor: this.isLoggingIn ? new Color("white") : new Color("#301217"),
