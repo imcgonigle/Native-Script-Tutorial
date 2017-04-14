@@ -31,3 +31,12 @@ ListView {
         opacity: 1;
     }
 }
+
+.list-item-container Image {
+    background-color: #aae;
+    border-radius: 3;
+    vertical-align: center;
+    margin-left: 10;
+    margin-right: 10;
+    padding: 8;
+}
