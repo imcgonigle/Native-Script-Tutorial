@@ -8,6 +8,9 @@ import { View } from "ui/core/view";
 import { User } from "../../shared/user/user";
 import { UserService } from "../../shared/user/user.service";
 
+import { setHintColor } from "../../utils/hint-util";
+import { TextField } from "ui/text-field";
+
 @Component({
   selector: "my-app",
   providers: [UserService],
