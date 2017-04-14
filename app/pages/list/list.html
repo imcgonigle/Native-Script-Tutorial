@@ -11,7 +11,10 @@
 
     <ListView [items]="groceryList" row="1" class="small-spacing" [class.visible]="listLoaded">
         <template let-item="item">
-            <Label [text]="item.name" class="medium-spacing"></Label>
+            <GridLayout columns="*,auto" class="list-item-container">
+                <Label col="0" [text]="item.name" class="medium-spacing"></Label>
+                <Image col="1" src="res://delete" (tap)="delete(item)"></Image>
+            </GridLayout>
         </template>
     </ListView>
 
